@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <p>replication attempt</p>
+    <script>
+    var l1 = "First line!";
+    var l2 = "Second line with trigger: " + new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(s);
+    var l3 = "Third line!";
+    
+    var { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.text(l1, 10, 80);
+    doc.text(l2, 10, 90);
+    doc.text(l3, 10, 100);
+    doc.save("output.pdf");
+    </script>
+</body>
+</html>
